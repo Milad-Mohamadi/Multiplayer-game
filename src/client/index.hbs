@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{htmlWebpackPlugin.options.title}}</title>
+
+  {{#each htmlWebpackPlugin.options.files.css}}
+  <link href="{{this}}" rel="stylesheet" />
+  {{/each}}
+  <link rel="icon" type="image/png" href="/src/client/favicon.png" />
+  <link rel="apple-touch-icon" href="/src/client/favicon.png" />
+</head>
+
+<body>
+  <div class="row h-100 text-center justify-content-center">
+        <section id="startupSection" class="col-10 col-md-4 m-auto">
+        <form id="startupForm">
+          <h1 class="mb-3 text-white text-center">Pantoboom</h1>
+          <div class="input-group mb-3">
+            <input id="usernameInput" type="text" autofocus autocomplete="off" class="form-control form-control-lg"
+              placeholder="put your name" maxlength="15" pattern="[a-zA-Z0-9]+" required>
+          </div>
+          <button type="submit" class="btn btn-lg btn-outline-light">Play</button>
+        </form>
+      </section>
+      <section id="messageBoxSection" class="hide col-11 m-auto position-relative px-0">
+        <div class="content px-5">
+        <div class="row game-header mx-0 my-3" >
+          <strong class="col-4 text-left" id="headerTitle"></strong>
+          <strong class="col-4" id="message"></strong>
+          <strong class="col-4" id="counter"></strong>
+        </div>
+        <div class="row">
+      <div class="col-3" >
+        <div id="usersList" class=" h-100 usersList" >
+        </div>
+        </div>
+      <div class="col-6" style="background-color: white;">
+       <canvas id="draw" class="w-100"></canvas>
+      </div>
+        <div class="col-3">
+        <ul id="messageList" class="list-group message-list">
+        </ul>
+        <form id="messageForm">
+          <div class="input-group ">
+            <input id="messageInput" type="text" autocomplete="off" required class="form-control"
+              placeholder="Type here ...">
+            <div class="input-group-append">
+              <button class="btn btn-light text-primary" type="submit">Send</button>
+            </div>
+          </div>
+        </form>
+        </div>
+          </div>
+          </div>
+          <form id='pointsBox' class="overlay hide">
+            <h1>Points</span>
+            <div id='pointslist'></div>
+            <button type="submit" class="btn btn-lg btn-outline-light">continue</button>
+          </form>
+      </section>
+</div>
+  {{#each htmlWebpackPlugin.options.files.js}}
+  <script src="{{this}}" type="text/javascript"></script>
+  {{/each}}
+</body>
+
+</html>

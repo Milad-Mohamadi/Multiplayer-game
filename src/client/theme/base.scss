@@ -1,0 +1,143 @@
+@import '~bootstrap';
+@import 'variables';
+@import 'override';
+html,
+body {
+    height: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+html,
+body {
+    min-width: 320px;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    color: #24292e;
+    overflow: hidden;
+    background: url(../media/image/background3.png) center fixed;
+    background-size: 256px;
+}
+
+header {
+    .nav {
+        .nav-link {
+            margin: 0 0.5rem;
+            padding: 0.25rem 0;
+            font-weight: 700;
+            color: rgba($body-color, 0.5);
+            background-color: transparent;
+            border-bottom: 0.25rem solid transparent;
+            &:hover,
+            &:focus {
+                border-bottom-color: $body-color;
+            }
+            &.active {
+                color: $body-color;
+                border-bottom-color: $body-color;
+            }
+        }
+    }
+    small {
+        color: rgba($body-color, 0.8);
+    }
+}
+
+footer {
+    color: rgba($body-color, 0.5);
+}
+
+.boy-image {
+    // background-image: url(#{$path-to-images}/like.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    padding: 0 2rem;
+}
+
+.message-list {
+    background-color: $body-color;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
+    height: 40vh;
+    overflow: auto;
+    li {
+        position: relative;
+        display: block;
+        border: none;
+        padding: 0 1.25rem;
+        background-color: transparent;
+        color: $message-color;
+        .date {
+            color: rgba($message-color, 0.8);
+        }
+        &::before {
+            content: '/> ';
+            color: rgba($message-color, 0.5);
+            font-style: normal;
+        }
+        &.info {
+            font-style: italic;
+        }
+        &.message {
+            .username {
+                color: $message-meta-color;
+            }
+            &.alt-true {
+                .username {
+                    color: $message-meta-alt-color;
+                }
+            }
+        }
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    background: #000;
+    opacity: 0.9;
+    width: 100%;
+    height: 80%;
+    color: white;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.content {
+    width: 100%;
+    height: 85%;
+    top: 0;
+    left: 0;
+}
+
+.usersList {
+    background-color: azure;
+    div {
+        padding: 5px;
+        font-size: 16px;
+        height: 48px;
+        color: #333;
+    }
+    div:nth-child(odd) {
+        background-color: #eeeeee;
+    }
+    div:nth-child(even) {
+        background-color: #fafafa;
+    }
+}
+
+.game-header {
+    height: 48px;
+    margin-bottom: 8px;
+    background-color: #eee;
+    border-radius: 5px;
+    display: flex;
+    line-height: 54px;
+    span {
+        color: #333;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
